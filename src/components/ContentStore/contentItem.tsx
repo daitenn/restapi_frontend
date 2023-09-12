@@ -16,18 +16,21 @@ const ContentItemMemo: FC<Omit<ContentType, 'createdAt' | 'updatedAt'>> = ({
   const { deleteContentMutation } = useMutateContent()
   return (
     <>
-      <li
-        className="item"
-        onClick={() => {
-          updateContent({
-            title: title,
-            body: body,
-            id: id,
-          })
-        }}
-      >
-        <span className="">{title}</span>
-      </li>
+      <div className='item border'>
+        <li
+          className="item-title border"
+          onClick={() => {
+            updateContent({
+              title: title,
+              body: body,
+              id: id,
+            })
+          }}
+        >
+          {title}
+        </li>
+      </div>
+
       {isValid ? (
         <div
           className="delete-icon"

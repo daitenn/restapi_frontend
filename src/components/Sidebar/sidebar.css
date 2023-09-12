@@ -1,35 +1,66 @@
-.head {
-    height: 90vh;
-    padding-right: 50px;
-}
+
+
 .header {
-    display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  font-size: 24px;
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    width: 200px;
+    height: 32px;
 }
-.list {
-    height: 44px;
-    
+.logo {
+    width: 32px;
+    height: 32px;
+}
+.title {
+    font-size: 24px;
+    color: #1A1A1A;
 }
 .body {
-    height: 82vh;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 82px;
+    left: 40px;
+    width: 240px;
+    height: 934px;
 }
-
-.sidebar {
-    height: 90vh;
-    width: 15vw;
+.list {
+    width: 240px;
+    height: 44px;
+    background: #FFFFFF;
 }
-.done {
-    margin-left: auto; /* 右端に配置 */
-    background-color: aqua;
+.sidebar-bottom {
+    background: #F6F8FA;
+    position: fixed;
+    top: 840px;
+    left: 0px;
+    width: 280px;
+    height: 60px;
 }
-.newPage {
-    display: flex;
-    margin-right: auto; /* 左端に配置 */
+.edit-icon {
+    background: #4CB3F8;
+    border-radius: 4px;
+    position: fixed;
+    top: 850px;
+    left: 180px;
+    width: 90px;
+    height: 40px;
 }
-.parent {
-    display: flex;
-    justify-content: space-between; /* 両端に要素を配置 */
+.done-icon {
+    background: #4CB3F8;
+    border-radius: 4px;
+    position: fixed;
+    top: 850px;
+    left: 180px;
+    width: 90px;
+    height: 40px;
+}
+.newPage-icon {
+    position: fixed;
+    top: 850px;
+    left: 40px;
+    width: 90px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 2px solid #4CB3F8;
+    border-radius: 4px;
 }

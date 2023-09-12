@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.main {
+    position: fixed;
+    top: 30px;
+    left: 320px;
+    width: 1080px;
+    height: 935px;
+    border-radius: 16px;
+    background: #F5F8FA;
+}

@@ -1,10 +1,48 @@
-.main {
-    display: flex;
-    justify-content: center; /* 横方向の中央配置 */
-    align-items: center; /* 縦方向の中央配置 */
+.header-main {
+    width: 910px;
+    height: 40.04px;
+    margin: 30.03px 140px 864.93px 30px;
 }
-.title {
-    display: flex;
-    justify-content: center; /* 横方向の中央配置 */
-    align-items: center; /* 縦方向の中央配置 */
+.header-title {
+    width: 850px;
+    height: 40px;
+    position: fixed;
+    top: 60.05px;
+    left: 380px;
+    font-family: NotoSansJP-Bold;
+    font-size: 24px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 40px;
+    font-weight: 700;
+}
+.body-parent {
+    background: #FFFFFF;
+    border-radius: 8px;
+    position: fixed;
+    top: 120.1px;
+    left: 350px;
+    width: 910px;
+    height: 814.87px;
+}
+.body-child {
+    font-family: NotoSansJP-Regular;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    font-weight: 400;
+    position: fixed;
+    top: 146.1px;
+    left: 380px;
+    width: 850px;
+    height: 789px;
+}
+.main-edit1 {
+    position: fixed;
+    top: 60px;
+    left: 1280px;
+    background: #4CB3F8;
+    border-radius: 4px;
+    width: 90px;
+    height: 40px;
 }

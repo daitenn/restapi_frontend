@@ -1,16 +1,100 @@
 .icon {
+    position: fixed;
+    top: 855px;
+    left: 216px;
+}
+.edit-title {
+    position: fixed;
+    top: 877px;
+    left: 184.5px;
+    width: 81px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+}
+.check {
+    position: fixed;
+    top: 850px;
+    left: 213px;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+.doned {
+    background: #4CB3F8;
+    border-radius: 4px;
+    position: fixed;
+    top: 850px;
+    left: 180px;
+    width: 90px;
     height: 40px;
-    min-width: 40px;
-    background-color: #F5F8FA;
-    border-color: #4CB3F8;
+}
+.done-title {
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+    position: fixed;
+    top: 875px;
+    left: 184.5px;
+    width: 81px;
+    height: 10px;
 }
 
 .edit {
-    margin: 0 0 0 auto;
-    height: 40px;
-    min-width: 40px;
-    background-color: #F5F8FA;
-    border-color: #4CB3F8;
-    display: flex;
-    margin-left: auto;
+    position: relative;
+    top: 120.1px;
+    left: 1280px;
+}
+.child {
+    width: 24px
+    height 24px
+}
+.new-icon {
+    position: fixed;
+    top: 855px;
+    left: 73px;
+}
+.new-title {
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #4CB3F8;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+    position: fixed;
+    top: 875px;
+    left: 60.5px;
+    width: 55px;
+    height: 10px;
+}
+.iconMain {
+    position: fixed;
+    top: 65px;
+    left: 1316px;
+    width: 18px;
+    height: 18px;
+}
+.edit-main-title {
+    position: fixed;
+    top: 86px;
+    left: 1284.5px;
+    width: 81px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
 }

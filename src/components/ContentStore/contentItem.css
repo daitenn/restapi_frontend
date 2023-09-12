@@ -2,9 +2,19 @@
     background-color: #F5F8FA;
 }
 .item {
-    width: 100%;
+    margin: 10px 44px 10px 10px;
+    width: 186px;
+    height: 24px;
+}
+.item-title {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #333333;
+    font-family: NotoSansJP-Regular;
 }
 
 .delete-icon {
-    text-align: right;
+    margin-left: 12px;
+    margin-top: 10px
 }

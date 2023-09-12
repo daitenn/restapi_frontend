@@ -4,6 +4,10 @@ import { ReactComponent as Done } from '../../assets/done.svg'
 export const DoneIcon = () => {
     
   return (
-    <Done/>
+    <div className='doned'>
+      <Done className='check'/>
+      <div className='done-title'>Done</div>
+    </div>
+    
   )
 }

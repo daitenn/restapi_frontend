@@ -9,40 +9,49 @@ import { useState } from 'react'
 import { ContentItem } from '../ContentStore/contentItem'
 import useStore from '../../store'
 import { useBooleanState } from '../../store'
+import { useMutateContent } from '../../hooks/useMutateContent'
+import { DeleteIcon } from '../Icon/DeleteIcon'
 
 const Sidebar = () => {
   const { data, isLoading } = useQueryContents()
-  const updateContent = useStore((state) => state.updateEditedContent)
+  const { createContentMutation } = useMutateContent()
   const [isItemVisible, setIsItemVisible] = useState(false)
-  const updateFlag = useBooleanState((state) => state.toggleValid)
+  const { isValid, toggleValid } = useBooleanState()
 
   // EditIconをクリックしたときにNewPageIconを表示する関数
   const handleEditIconClick = () => {
     setIsItemVisible(!isItemVisible)
-    updateFlag(true)
+    toggleValid(true)
   }
 
-  const handleTrashIconClick = () => {
+  const handleDoneIconClick = () => {
     setIsItemVisible(!isItemVisible)
-    updateFlag(false)
+    toggleValid(false)
+  }
+
+  const handleNewPage = () => {
+    createContentMutation.mutate({
+      title: 'タイトル',
+      body: 'コンテンツ',
+    })
   }
 
   return (
     <>
-      <div className="flex-col">
+      <div className="sidebar">
         {isLoading ? (
           <p></p>
         ) : (
           <>
-            <div className="ml-10">
-              <div className="flex border header container">
-                <LogoIcon />
-                <a className="">ServiceName</a>
+            <div>
+              <div className="header flex border">
+                <LogoIcon className="logo" />
+                <a className="title">ServiceName</a>
               </div>
-              <ul className="mt-5 border container body">
+              <ul className="body border">
                 {data?.map((val) => (
                   <>
-                    <div className="flex list">
+                    <div className="flex border list">
                       <ContentItem
                         key={val.id}
                         id={val.id}
@@ -53,27 +62,24 @@ const Sidebar = () => {
                   </>
                 ))}
               </ul>
-              <div className="flex border container">
-                {isItemVisible ? (
-                  <>
-                    <div className="flex">
-                      <div className="newPage border mr-10">
-                        <NewPageIcon />
-                      </div>
-                      <div
-                        className="done border"
-                        onClick={handleTrashIconClick}
-                      >
-                        <DoneIcon />
-                      </div>
+              {!isItemVisible ? (
+                <>
+                  <div className="sidebar-bottom">
+                    <div className="edit-icon" onClick={handleEditIconClick}>
+                      <EditIcon />
                     </div>
-                  </>
-                ) : (
-                  <div className="edit" onClick={handleEditIconClick}>
-                    <EditIcon />
                   </div>
-                )}
-              </div>
+                </>
+              ) : (
+                <>
+                  <div className="done-icon" onClick={handleDoneIconClick}>
+                    <DoneIcon />
+                  </div>
+                  <div className="newPage-icon" onClick={handleNewPage}>
+                    <NewPageIcon />
+                  </div>
+                </>
+              )}
             </div>
           </>
         )}

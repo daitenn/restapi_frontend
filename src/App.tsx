@@ -3,6 +3,7 @@ import { Main } from './components/layout/Main'
 import Sidebar from './components/Sidebar/Sidebar'
 import './index.css'
 import { Bottombar } from './components/Bottombar/Bottombar'
+import { Border } from './components/layout/Border'
 
 function App() {
   return (
@@ -13,12 +14,13 @@ function App() {
           <Main />
         </div>
       </div> */}
-      <div className='flex'>
-        <div className='container border'>
+      <div>
+        <div className='border'>
           <Sidebar />
+          <Border/>
           {/* <Bottombar /> */}
         </div>
-        <div className='ml-5'>
+        <div className='main'>
           <Main/>
         </div>
       </div>

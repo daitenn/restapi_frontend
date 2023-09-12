@@ -1,0 +1,6 @@
+.parent {
+    justify-content: space-between;   
+}
+.child {
+    margin: 0 0 0 auto;
+}

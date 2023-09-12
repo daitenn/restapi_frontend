@@ -1,0 +1,16 @@
+.icon {
+    height: 40px;
+    min-width: 40px;
+    background-color: #F5F8FA;
+    border-color: #4CB3F8;
+}
+
+.edit {
+    margin: 0 0 0 auto;
+    height: 40px;
+    min-width: 40px;
+    background-color: #F5F8FA;
+    border-color: #4CB3F8;
+    display: flex;
+    margin-left: auto;
+}

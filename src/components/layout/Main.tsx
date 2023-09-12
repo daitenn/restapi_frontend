@@ -1,0 +1,74 @@
+import { FormEvent } from 'react'
+import { useQueryClient } from '@tanstack/react-query'
+import useStore from '../../store'
+import { useQueryContents } from '../../hooks/useQueryContent'
+import { useMutateContent } from '../../hooks/useMutateContent'
+import { ContentItem } from '../contentItem'
+
+import { useState } from 'react'
+
+export const Main = () => {
+  const queryClient = useQueryClient()
+  const { editedContent } = useStore()
+  const updateTask = useStore((state) => state.updateEditedContent)
+  const { data, isLoading } = useQueryContents()
+  const { createContentMutation, updateContentMutation } = useMutateContent()
+  const [stateTitle, setStateTitle] = useState("")
+  const [stateBody, setStateBody] = useState("")
+  
+  
+
+  const submitTaskHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (editedContent.id === 0)
+      createContentMutation.mutate({
+        title: editedContent.title,
+        body: editedContent.body,
+      })
+    else {
+      updateContentMutation.mutate(editedContent)
+    }
+  }
+  return (
+    <>
+      <form onSubmit={submitTaskHandler} className="flex">
+        <input
+          className="w-screen mb-3 mr-3 px-3 py-2 border border-gray-300 title"
+          placeholder="title ?"
+          type="text"
+          onChange={(e) => {
+            setStateTitle(e.target.value)
+            updateTask({ ...editedContent, title: e.target.value })
+          }}
+          value={editedContent.title}
+        />
+        <button
+          className="disabled:opacity-40 mx-3 py-2 px-3 text-white bg-indigo-600 rounded"
+          disabled={!editedContent.title}
+        >
+          {editedContent.id === 0 ? 'Create' : 'Update'}
+        </button>
+      </form>
+
+      <form onSubmit={submitTaskHandler} className="flex">
+        <textarea
+          cols={53}
+          className="h-screen w-screen mb-3 mr-3 px-3 py-2 border border-gray-300 main"
+          placeholder="body ?"
+          onChange={(e) => {
+            setStateBody(e.target.value)
+            updateTask({ ...editedContent, body: e.target.value })
+          }}
+          value={editedContent.body}
+        ></textarea>
+        
+        <button
+          className="disabled:opacity-40 mx-3 py-2 px-3 text-white bg-indigo-600 rounded"
+          disabled={!editedContent.body}
+        >
+          {editedContent.id === 0 ? 'Create' : 'Update'}
+        </button>
+      </form>
+    </>
+  )
+}

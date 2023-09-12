@@ -1,0 +1,10 @@
+.item:active {
+    background-color: #F5F8FA;
+}
+.item {
+    width: 100%;
+}
+
+.delete-icon {
+    text-align: right;
+}

@@ -1,0 +1,6 @@
+.topbar {
+    width: 70vw;
+    display: flex;
+    justify-content: center; /* 横方向の中央配置 */
+    align-items: center; /* 縦方向の中央配置 */
+}

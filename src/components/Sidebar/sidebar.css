@@ -1,0 +1,35 @@
+.head {
+    height: 90vh;
+    padding-right: 50px;
+}
+.header {
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-size: 24px;
+}
+.list {
+    height: 44px;
+    
+}
+.body {
+    height: 82vh;
+}
+
+.sidebar {
+    height: 90vh;
+    width: 15vw;
+}
+.done {
+    margin-left: auto; /* 右端に配置 */
+    background-color: aqua;
+}
+.newPage {
+    display: flex;
+    margin-right: auto; /* 左端に配置 */
+}
+.parent {
+    display: flex;
+    justify-content: space-between; /* 両端に要素を配置 */
+}

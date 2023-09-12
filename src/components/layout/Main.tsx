@@ -3,7 +3,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import useStore from '../../store'
 import { useQueryContents } from '../../hooks/useQueryContent'
 import { useMutateContent } from '../../hooks/useMutateContent'
-import { ContentItem } from '../contentItem'
+import { ContentItem } from '../ContentStore/contentItem'
 
 import { useState } from 'react'
 
@@ -13,10 +13,8 @@ export const Main = () => {
   const updateTask = useStore((state) => state.updateEditedContent)
   const { data, isLoading } = useQueryContents()
   const { createContentMutation, updateContentMutation } = useMutateContent()
-  const [stateTitle, setStateTitle] = useState("")
-  const [stateBody, setStateBody] = useState("")
-  
-  
+  const [stateTitle, setStateTitle] = useState('')
+  const [stateBody, setStateBody] = useState('')
 
   const submitTaskHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -61,7 +59,7 @@ export const Main = () => {
           }}
           value={editedContent.body}
         ></textarea>
-        
+
         <button
           className="disabled:opacity-40 mx-3 py-2 px-3 text-white bg-indigo-600 rounded"
           disabled={!editedContent.body}

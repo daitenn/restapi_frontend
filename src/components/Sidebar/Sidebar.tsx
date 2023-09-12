@@ -6,7 +6,7 @@ import { NewPageIcon } from '../Icon/NewPageIcon'
 import { DoneIcon } from '../Icon/DoneIcon'
 import { useState } from 'react'
 
-import { ContentItem } from '../contentItem'
+import { ContentItem } from '../ContentStore/contentItem'
 import useStore from '../../store'
 import { useBooleanState } from '../../store'
 

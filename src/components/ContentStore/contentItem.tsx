@@ -1,9 +1,9 @@
 import { FC, memo } from 'react'
-import useStore from '../store'
-import { useBooleanState } from '../store'
-import { ContentType } from '../types'
-import { useMutateContent } from '../hooks/useMutateContent'
-import { ReactComponent as DeleteIcon } from '../assets/delete.svg'
+import useStore from '../../store'
+import { useBooleanState } from '../../store'
+import { ContentType } from '../../types'
+import { useMutateContent } from '../../hooks/useMutateContent'
+import { ReactComponent as DeleteIcon } from '../../assets/delete.svg'
 import './contentItem.css'
 
 const ContentItemMemo: FC<Omit<ContentType, 'createdAt' | 'updatedAt'>> = ({
@@ -30,13 +30,13 @@ const ContentItemMemo: FC<Omit<ContentType, 'createdAt' | 'updatedAt'>> = ({
       </li>
       {isValid ? (
         <div
-        className="delete-icon"
-        onClick={() => {
-          deleteContentMutation.mutate(id)
-        }}
-      >
-        <DeleteIcon className="border" />
-      </div>
+          className="delete-icon"
+          onClick={() => {
+            deleteContentMutation.mutate(id)
+          }}
+        >
+          <DeleteIcon className="border" />
+        </div>
       ) : (
         <p></p>
       )}

@@ -25,6 +25,16 @@
     width: 910px;
     height: 814.87px;
 }
+.body-parent-input {
+    position: fixed;
+    top: 120px;
+    left: 350px;
+    width: 910px;
+    height: 904px;
+    background: #FFFFFF;
+    border: 1px solid #4CB3F8;
+    border-radius: 8px 8px 0 0;
+}
 .body-child {
     font-family: NotoSansJP-Regular;
     font-size: 16px;
@@ -36,6 +46,22 @@
     left: 380px;
     width: 850px;
     height: 789px;
+    border: none;
+    outline: none;
+}
+.body-child-input {
+    font-family: NotoSansJP-Regular;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 0;
+    font-weight: 400;
+    position: fixed;
+    top: 146.1px;
+    left: 380px;
+    width: 850px;
+    height: 789px;
+    border: none;
+    outline: none;
 }
 .main-edit1 {
     position: fixed;
@@ -45,4 +71,75 @@
     border-radius: 4px;
     width: 90px;
     height: 40px;
+}
+.main-edit2 {
+    position:fixed;
+    top: 120.1px;
+    left: 1280px;
+    width: 90px;
+    height: 40.07px;
+    background: #4CB3F8;
+    border-radius: 4px;
+}
+
+.header-main-input {
+    position: fixed;
+    top: 60px;
+    left: 350px;
+    width: 910px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #4CB3F8;
+    border-radius: 8px;
+}
+.header-title-input {
+    position: fixed;
+    top: 65px;
+    left: 380px;
+    width: 850px;
+    height: 30px;
+    font-family: NotoSansJP-Bold;
+    font-size: 24px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 40px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+}
+.save-main-title {
+    position: fixed;
+    top: 60px;
+    left: 1330px;
+    width: 40px;
+    height: 40px;
+    background: #4CB3F8;
+    border-radius: 4px;
+}
+.cancel-main-title {
+    position: fixed;
+    top: 60px;
+    left: 1280px;
+    width: 40px;
+    height: 40px;
+    background: #B3B3B3;
+    border-radius: 4px;
+}
+.cancel-main-body {
+    position: fixed;
+    top: 120px;
+    left: 1280px;
+    width: 40px;
+    height: 40px;
+    background: #B3B3B3;
+    border-radius: 4px;
+}
+.save-main-body {
+    position: fixed;
+    top: 120px;
+    left: 1330px;
+    width: 40px;
+    height: 40px;
+    background: #4CB3F8;
+    border-radius: 4px;
 }

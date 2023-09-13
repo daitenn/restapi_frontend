@@ -77,7 +77,7 @@
     width: 55px;
     height: 10px;
 }
-.iconMain {
+.iconMainTitle {
     position: fixed;
     top: 65px;
     left: 1316px;
@@ -89,6 +89,111 @@
     top: 86px;
     left: 1284.5px;
     width: 81px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+}
+.iconMainBody {
+    position: fixed;
+    top: 125.09px;
+    left: 1316px;
+    width: 18px;
+    height: 18px;
+}
+.edit-main-body {
+    position: fixed;
+    top: 146.1px;
+    left: 1284.5px;
+    width: 81px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+}
+.cancel-icon {
+    position: fixed;
+    top: 67px;
+    left: 1293px;
+    width: 14px;
+    height: 14px;
+}
+.cancel-title {
+    position: fixed;
+    top: 86px;
+    left: 1282px;
+    width: 36px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+}
+.save-icon {
+    position: fixed;
+    top: 65px;
+    left: 1341px;
+    width: 18px;
+    height: 18px;
+}
+.save-title {
+    position: fixed;
+    top: 86px;
+    left: 1332px;
+    width: 36px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+}
+.save-icon-body {
+    position: fixed;
+    top: 125px;
+    left: 1341px;
+    width: 18px;
+    height: 18px;
+}
+.save-body {
+    position: fixed;
+    top: 146px;
+    left: 1332px;
+    width: 36px;
+    height: 10px;
+    font-family: NotoSansJP-Bold;
+    font-size: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 10px;
+    font-weight: 700;
+}
+.cancel-icon-body {
+    position: fixed;
+    top: 127px;
+    left: 1293px;
+    width: 14px;
+    height: 14px;
+}
+.cancel-body {
+    position: fixed;
+    top: 146px;
+    left: 1282px;
+    width: 36px;
     height: 10px;
     font-family: NotoSansJP-Bold;
     font-size: 10px;

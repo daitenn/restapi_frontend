@@ -16,9 +16,9 @@ const ContentItemMemo: FC<Omit<ContentType, 'createdAt' | 'updatedAt'>> = ({
   const { deleteContentMutation } = useMutateContent()
   return (
     <>
-      <div className='item border'>
+      <div className="item">
         <li
-          className="item-title border"
+          className="item-title"
           onClick={() => {
             updateContent({
               title: title,
@@ -38,7 +38,7 @@ const ContentItemMemo: FC<Omit<ContentType, 'createdAt' | 'updatedAt'>> = ({
             deleteContentMutation.mutate(id)
           }}
         >
-          <DeleteIcon className="border" />
+          <DeleteIcon />
         </div>
       ) : (
         <p></p>

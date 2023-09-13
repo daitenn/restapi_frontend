@@ -13,7 +13,7 @@ export const EditIcon = () => {
 export const EditIconTitle = () => {
   return (
     <div>
-        <Edit className='iconMain'/>
+        <Edit className='iconMainTitle'/>
         <div className='edit-main-title'>Edit</div>
     </div>
   )
@@ -22,8 +22,8 @@ export const EditIconTitle = () => {
 export const EditIconMain = () => {
   return (
     <div>
-        <Edit className='iconMain'/>
-        <div className='edit-main-title'>Edit</div>
+        <Edit className='iconMainBody'/>
+        <div className='edit-main-body'>Edit</div>
     </div>
   )
 }

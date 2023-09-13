@@ -7,6 +7,8 @@ import { ContentItem } from '../ContentStore/contentItem'
 import './main.css'
 import { useState } from 'react'
 import { EditIcon, EditIconMain, EditIconTitle } from '../Icon/EditIcon'
+import { SaveIcon, SaveIconBody } from '../Icon/SaveIcon'
+import { CancelIcon, CancelIconBody } from '../Icon/CancelIcon'
 
 export const Main = () => {
   const queryClient = useQueryClient()
@@ -18,9 +20,10 @@ export const Main = () => {
   const [stateBody, setStateBody] = useState('')
   const [inputTitleFlag, setInputTitleFlag] = useState<boolean>(false)
   const [inputBodyFlag, setInputBodyFlag] = useState<boolean>(false)
+  const [editedContentValue, setEditedContentValue] = useState('')
+  const [initialTitle, setInitialTitle] = useState(editedContent.title)
 
-  const submitTaskHandler = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const submitTaskHandler = () => {
     if (editedContent.id === 0)
       createContentMutation.mutate({
         title: editedContent.title,
@@ -30,16 +33,97 @@ export const Main = () => {
       updateContentMutation.mutate(editedContent)
     }
   }
+
+  const handleInput1 = () => {
+    setInputTitleFlag(!inputTitleFlag)
+  }
+  const handleInput2 = () => {
+    setInputBodyFlag(!inputBodyFlag)
+  }
+
+  const handleInputChange = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+
+  const handleInputCancel = () => {
+    setEditedContentValue(editedContent.title)
+    setInputTitleFlag(!inputTitleFlag)
+  }
+
   return (
     <>
-      <div className="header-main border">
-        <div className="header-title border">{editedContent.title}</div>
+      {/* main-header */}
+      <div className="header-main">
+        <div className="header-title">{editedContent.title}</div>
       </div>
-      <div className="body-parent">
-        <div className="body-child">{editedContent.body}</div>
-      </div>
-      <div className="main-edit1">
-        <EditIconTitle />
+      {inputTitleFlag ? (
+        <>
+          {/* <form onSubmit={submitTaskHandler}> */}
+          <div className="header-main-input">
+            <input
+              className="header-title-input"
+              placeholder="title ?"
+              type="text"
+              onChange={(e) => {
+                handleInputChange
+                // updateTask({ ...editedContent, title: e.target.value })
+              }}
+              value={initialTitle}
+            />
+          </div>
+          <div className="save-main-title" onClick={submitTaskHandler}>
+            <SaveIcon />
+          </div>
+          {/* </form> */}
+
+          <div className="cancel-main-title" onClick={handleInputCancel}>
+            <CancelIcon />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="main-edit1" onClick={handleInput1}>
+            <EditIconTitle />
+          </div>
+        </>
+      )}
+
+      {/* main-body */}
+      <div>
+        {inputBodyFlag ? (
+          <>
+            <form onSubmit={submitTaskHandler}>
+              <div className="body-parent-input">
+                <textarea
+                  cols={53}
+                  className="body-child-input"
+                  placeholder="body ?"
+                  onChange={(e) => {
+                    setStateBody(e.target.value)
+                    updateTask({ ...editedContent, body: e.target.value })
+                  }}
+                  value={editedContent.body}
+                ></textarea>
+              </div>
+            </form>
+
+            <div className="cancel-main-body" onClick={handleInput2}>
+              <CancelIconBody />
+            </div>
+            <div className="save-main-body">
+              <SaveIconBody />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="body-parent">
+              <div className="body-child">{editedContent.body}</div>
+            </div>
+            <div className="main-edit2" onClick={handleInput2}>
+              <EditIconMain />
+            </div>
+          </>
+        )}
       </div>
 
       {/* {!inputTitleFlag ? (

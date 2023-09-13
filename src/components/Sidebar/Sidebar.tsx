@@ -44,14 +44,14 @@ const Sidebar = () => {
         ) : (
           <>
             <div>
-              <div className="header flex border">
+              <div className="header flex">
                 <LogoIcon className="logo" />
                 <a className="title">ServiceName</a>
               </div>
-              <ul className="body border">
+              <ul className="body">
                 {data?.map((val) => (
                   <>
-                    <div className="flex border list">
+                    <div className="flex list">
                       <ContentItem
                         key={val.id}
                         id={val.id}
@@ -72,11 +72,13 @@ const Sidebar = () => {
                 </>
               ) : (
                 <>
-                  <div className="done-icon" onClick={handleDoneIconClick}>
-                    <DoneIcon />
-                  </div>
-                  <div className="newPage-icon" onClick={handleNewPage}>
-                    <NewPageIcon />
+                  <div className="sidebar-bottom">
+                    <div className="done-icon" onClick={handleDoneIconClick}>
+                      <DoneIcon />
+                    </div>
+                    <div className="newPage-icon" onClick={handleNewPage}>
+                      <NewPageIcon />
+                    </div>
                   </div>
                 </>
               )}

@@ -4,3 +4,36 @@
 .child {
     margin: 0 0 0 auto;
 }
+.bottom-parent {
+    position: fixed;
+    top: 964px;
+    left: 280px;
+    width: 1160px;
+    height: 60px;
+    background-color: #FFFFFF;
+}
+.bottom-child-1{
+    position: fixed;
+    top: 860px;
+    left: 320px;
+    width: 164px;
+    height: 17px;
+    font-family: NotoSansJP-Regular;
+    font-size: 12px;
+    color: #333333;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+.bottom-child-2{
+    position: fixed;
+    top: 860px;
+    left: 1348px;
+    width: 52px;
+    height: 17px;
+    font-family: NotoSansJP-Regular;
+    font-size: 12px;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: right;
+    font-weight: 400;
+}

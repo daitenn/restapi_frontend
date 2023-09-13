@@ -23,14 +23,14 @@
     top: 120.1px;
     left: 350px;
     width: 910px;
-    height: 814.87px;
+    height: 700px;
 }
 .body-parent-input {
     position: fixed;
     top: 120px;
     left: 350px;
     width: 910px;
-    height: 904px;
+    height: 700px;
     background: #FFFFFF;
     border: 1px solid #4CB3F8;
     border-radius: 8px 8px 0 0;
@@ -59,7 +59,7 @@
     top: 146.1px;
     left: 380px;
     width: 850px;
-    height: 789px;
+    height: 670px;
     border: none;
     outline: none;
 }

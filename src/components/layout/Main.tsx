@@ -23,7 +23,8 @@ export const Main = () => {
   const [editedContentValue, setEditedContentValue] = useState('')
   const [initialTitle, setInitialTitle] = useState(editedContent.title)
 
-  const submitTaskHandler = () => {
+  const submitTaskHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     if (editedContent.id === 0)
       createContentMutation.mutate({
         title: editedContent.title,
@@ -41,9 +42,9 @@ export const Main = () => {
     setInputBodyFlag(!inputBodyFlag)
   }
 
-  const handleInputChange = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-  }
+  // const handleInputChange = () => {
+  //   e.preventDefault()
+  // }
 
   const handleInputCancel = () => {
     setEditedContentValue(editedContent.title)
@@ -58,23 +59,22 @@ export const Main = () => {
       </div>
       {inputTitleFlag ? (
         <>
-          {/* <form onSubmit={submitTaskHandler}> */}
-          <div className="header-main-input">
-            <input
-              className="header-title-input"
-              placeholder="title ?"
-              type="text"
-              onChange={(e) => {
-                handleInputChange
-                // updateTask({ ...editedContent, title: e.target.value })
-              }}
-              value={initialTitle}
-            />
-          </div>
-          <div className="save-main-title" onClick={submitTaskHandler}>
-            <SaveIcon />
-          </div>
-          {/* </form> */}
+          <form onSubmit={submitTaskHandler}>
+            <div className="header-main-input">
+              <input
+                className="header-title-input"
+                placeholder="title ?"
+                type="text"
+                onChange={(e) => {
+                  updateTask({ ...editedContent, title: e.target.value })
+                }}
+                value={editedContent.title}
+              />
+            </div>
+            <button className="save-main-title" onClick={handleInput1}>
+              <SaveIcon />
+            </button>
+          </form>
 
           <div className="cancel-main-title" onClick={handleInputCancel}>
             <CancelIcon />

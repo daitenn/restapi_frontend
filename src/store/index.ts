@@ -15,7 +15,7 @@ type State = {
 
 type Bool = {
     isValid: boolean;
-  toggleValid: (payload : boolean) => void;
+    toggleValid: (payload : boolean) => void;
 }
 
 const useStore = create<State>((set) => ({

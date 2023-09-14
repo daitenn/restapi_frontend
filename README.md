@@ -11,6 +11,7 @@
     - [API-Clientの説明](#api-client)
     - [Factory層の説明](#fac-method)
 - [レートリミッターについて](#rait)
+- [時間があればやりたかったこと](#want)
 - [開発ログ](#log)
 
 <h2 id="complete">完成品</h2>
@@ -152,6 +153,11 @@ $ npm i --save @nestjs/throttler
 export class AppModule {}
 ```
 
+<h2 id="want">時間があればやりたかったこと</h2>
+
+- テストコードの実装
+- レスポンシブ対応
+
 <h2 id="log">開発ログ</h2>
 
 - 2023/09/09
@@ -173,6 +179,6 @@ export class AppModule {}
 
 - 2023/09/14
   リファクタリング及びドキュメント調整
-  ....1h
-  - 合計　8h
+  ....1.3h
+  - 合計　8.3h
 

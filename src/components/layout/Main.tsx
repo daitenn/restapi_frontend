@@ -25,8 +25,21 @@ export const Main = () => {
     useState(editedContent)
   const [initialTitle, setInitialTitle] = useState(editedContent.title)
 
-  const submitTaskHandler = (e: FormEvent<HTMLFormElement>) => {
+  const submitTaskHandlerTitle = (e: FormEvent<HTMLFormElement>) => {
     setInputTitleFlag(!inputTitleFlag)
+    e.preventDefault()
+    if (editedContent.id === 0)
+      createContentMutation.mutate({
+        title: editedContent.title,
+        body: editedContent.body,
+      })
+    else {
+      updateContentMutation.mutate(editedContent)
+    }
+  }
+
+  const submitTaskHandlerBody = (e: FormEvent<HTMLFormElement>) => {
+    setInputBodyFlag(!inputBodyFlag)
     e.preventDefault()
     if (editedContent.id === 0)
       createContentMutation.mutate({
@@ -62,7 +75,7 @@ export const Main = () => {
       </div>
       {inputTitleFlag ? (
         <>
-          <form className="header-main-input" onSubmit={submitTaskHandler}>
+          <form className="header-main-input" onSubmit={submitTaskHandlerTitle}>
             <input
               className="header-title-input"
               placeholder="title ?"
@@ -93,7 +106,7 @@ export const Main = () => {
       <div>
         {inputBodyFlag ? (
           <>
-            <form className="body-parent-input" onSubmit={submitTaskHandler}>
+            <form className="body-parent-input" onSubmit={submitTaskHandlerBody}>
               <textarea
                 cols={53}
                 className="body-child-input"

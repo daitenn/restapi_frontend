@@ -14,20 +14,20 @@ const ContentItemMemo: FC<Omit<ContentType, 'createdAt' | 'updatedAt'>> = ({
   const updateContent = useStore((state) => state.updateEditedContent)
   const { isValid } = useBooleanState()
   const { deleteContentMutation } = useMutateContent()
-  const [selectedItem, setSelectedItem] = useState<number | null>(null)
+  const [selectedItem, setSelectedItem] = useState<boolean>(false)
 
-  const handleItemClick = (id: number) => {
-    setSelectedItem(id)
+  const handleItemClick = () => {
+    setSelectedItem(!selectedItem)
   }
 
   return (
     <>
-      <div className={selectedItem == id ? 'item-select' : 'item-noSelect'}>
+      <div className={selectedItem ? 'item-select' : 'item-noSelect'}>
         <div className="item">
           <li
             className="item-title"
             onClick={() => {
-              handleItemClick(id)
+              handleItemClick()
               updateContent({
                 title: title,
                 body: body,

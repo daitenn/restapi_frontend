@@ -40,7 +40,6 @@ export const useMutateContent = () => {
                         )
                     )
                 }
-                resetEditedContent()
             },
             onError : (err) => {
                 console.log(err)

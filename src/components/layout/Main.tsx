@@ -20,10 +20,13 @@ export const Main = () => {
   const [stateBody, setStateBody] = useState('')
   const [inputTitleFlag, setInputTitleFlag] = useState<boolean>(false)
   const [inputBodyFlag, setInputBodyFlag] = useState<boolean>(false)
-  const [editedContentValue, setEditedContentValue] = useState('')
+  const [editedContentValue, setEditedContentValue] = useState(editedContent)
+  const [editedContentBodyValue, setEditedContentBodyValue] =
+    useState(editedContent)
   const [initialTitle, setInitialTitle] = useState(editedContent.title)
 
   const submitTaskHandler = (e: FormEvent<HTMLFormElement>) => {
+    setInputTitleFlag(!inputTitleFlag)
     e.preventDefault()
     if (editedContent.id === 0)
       createContentMutation.mutate({
@@ -47,7 +50,7 @@ export const Main = () => {
   // }
 
   const handleInputCancel = () => {
-    setEditedContentValue(editedContent.title)
+    // setEditedContentValue(editedContent.title)
     setInputTitleFlag(!inputTitleFlag)
   }
 
@@ -59,19 +62,17 @@ export const Main = () => {
       </div>
       {inputTitleFlag ? (
         <>
-          <form onSubmit={submitTaskHandler}>
-            <div className="header-main-input">
-              <input
-                className="header-title-input"
-                placeholder="title ?"
-                type="text"
-                onChange={(e) => {
-                  updateTask({ ...editedContent, title: e.target.value })
-                }}
-                value={editedContent.title}
-              />
-            </div>
-            <button className="save-main-title" onClick={handleInput1}>
+          <form className="header-main-input" onSubmit={submitTaskHandler}>
+            <input
+              className="header-title-input"
+              placeholder="title ?"
+              type="text"
+              onChange={(e) => {
+                updateTask({ ...editedContent, title: e.target.value })
+              }}
+              value={editedContent.title || ''}
+            />
+            <button type="submit" className="save-main-title">
               <SaveIcon />
             </button>
           </form>
@@ -92,26 +93,24 @@ export const Main = () => {
       <div>
         {inputBodyFlag ? (
           <>
-            <form onSubmit={submitTaskHandler}>
-              <div className="body-parent-input">
-                <textarea
-                  cols={53}
-                  className="body-child-input"
-                  placeholder="body ?"
-                  onChange={(e) => {
-                    setStateBody(e.target.value)
-                    updateTask({ ...editedContent, body: e.target.value })
-                  }}
-                  value={editedContent.body}
-                ></textarea>
-              </div>
+            <form className="body-parent-input" onSubmit={submitTaskHandler}>
+              <textarea
+                cols={53}
+                className="body-child-input"
+                placeholder="body ?"
+                onChange={(e) => {
+                  setStateBody(e.target.value)
+                  updateTask({ ...editedContent, body: e.target.value })
+                }}
+                value={editedContent.body}
+              ></textarea>
+              <button type="submit" className="save-main-body">
+                <SaveIconBody />
+              </button>
             </form>
 
             <div className="cancel-main-body" onClick={handleInput2}>
               <CancelIconBody />
-            </div>
-            <div className="save-main-body">
-              <SaveIconBody />
             </div>
           </>
         ) : (

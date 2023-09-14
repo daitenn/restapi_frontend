@@ -53,7 +53,7 @@
 
 <h2 id="hardship">課題作成の過程（設計及び中間文書）</h2>
 
-<h3 id="factory">api通信手法を「Repository層」「Model層」「API-Client」「FactoryMethod」に分けて行う。(FactoryMethod化)</h3>
+<h3 id="factory">api通信手法を「Repository層」「Model層」「API-Client」「Factory層」に分けて行う。(FactoryMethod化)</h3>
 
 ```
 src/

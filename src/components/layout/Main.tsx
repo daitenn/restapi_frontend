@@ -106,7 +106,10 @@ export const Main = () => {
       <div>
         {inputBodyFlag ? (
           <>
-            <form className="body-parent-input" onSubmit={submitTaskHandlerBody}>
+            <form
+              className="body-parent-input"
+              onSubmit={submitTaskHandlerBody}
+            >
               <textarea
                 cols={53}
                 className="body-child-input"

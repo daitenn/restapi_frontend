@@ -16,14 +16,14 @@ function App() {
         </div>
       </div> */}
       <div>
-        <div className='border'>
+        <div className="border">
           <Sidebar />
-          <Border/>
+          <Border />
           {/* <Bottombar /> */}
         </div>
-        <div className='main'>
-          <Main/>
-          <Bottom/>
+        <div className="main">
+          <Main />
+          <Bottom />
         </div>
       </div>
     </>

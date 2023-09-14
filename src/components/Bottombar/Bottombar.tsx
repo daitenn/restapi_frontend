@@ -18,7 +18,7 @@ export const Bottombar = () => {
     <div className="flex border ml-10 mr-10">
       {isItemVisible ? (
         <>
-          <div className='flex'>
+          <div className="flex">
             <NewPageIcon />
             <div className="child" onClick={handleEditIconClick}>
               <DoneIcon />

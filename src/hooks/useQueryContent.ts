@@ -2,13 +2,12 @@ import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
 import { ContentType } from '../api/model'
 import { useState } from 'react'
-import { useAsync } from "react-use";
-import { contentFactory } from '../api/factory/content_factory';
-
+import { useAsync } from 'react-use'
+import { contentFactory } from '../api/factory/content_factory'
 
 export const useQueryContents = () => {
-  const [contents, setContents] = useState<ContentType[]>([]);
-  
+  const [contents, setContents] = useState<ContentType[]>([])
+
   // factoryMethod
   const getContents = async () => {
     const data = contentFactory().index()
@@ -19,12 +18,12 @@ export const useQueryContents = () => {
     queryKey: ['contents'],
     queryFn: getContents,
     staleTime: Infinity,
-    onError: (err : any) => {
-        if (err.response.data.message) {
-            console.log(err.response.data.message)
-          } else {
-            console.log(err.response.data)
-          }
-    }
+    onError: (err: any) => {
+      if (err.response.data.message) {
+        console.log(err.response.data.message)
+      } else {
+        console.log(err.response.data)
+      }
+    },
   })
 }

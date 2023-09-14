@@ -1,7 +1,15 @@
 # 目次
 - [完成品](#complete)
+  - [PC１３インチの場合の対応](#pc)
 - [使用技術](#tech)
-- [課題作成の過程(中間文書)](#hardship)
+  - [選定理由](#reason)
+- [課題作成の過程(設計)](#hardship)
+  - [FactoryMethod化](#factory)
+    - [この構成のメリット](#melit)
+    - [Repository層の説明](#repository)
+    - [Model層の説明](#model)
+    - [API-Clientの説明](#api-client)
+    - [Factory層の説明](#fac-method)
 - [レートリミッターについて](#rait)
 - [開発ログ](#log)
 
@@ -15,6 +23,19 @@
   ```npm start```(localhost:3001)
   を行う
 
+<h3 id="pc">パソコンが13インチの場合、下記の対応する必要がある</h3>
+
+- 下記のように、下面が見えない
+![](./sketch/1.png)
+
+- ツールバーをオフにする
+![](./sketch/2.png)
+
+- そしたら全面見えるようになる
+![](./sketch/3.png)
+
+  
+
 <h2 id="tech">使用技術</h2>
 
 - React
@@ -25,15 +46,33 @@
 - zustand
 - react-query
 
-<選定理由>
+<h3 id="reason">選定理由</h3>
 
 元々、Next.js(TypeScript)で課題作成を行おうと思っていましたが、今回の課題はSPAだったので、シンプルなReact(TypeScript)で行いました。
 
-<h2 id="hardship">課題作成の過程（中間文書）</h2>
+<h2 id="hardship">課題作成の過程（設計及び中間文書）</h2>
 
-### api通信手法を「Repository層」「Model層」「API-Client」「FactoryMethod」に分けて行う。
+<h3 id="factory">api通信手法を「Repository層」「Model層」「API-Client」「FactoryMethod」に分けて行う。(FactoryMethod化)</h3>
 
-#### 「Repository層」
+```
+src/
+ |-api
+  |-factory
+  |-model
+  |-repository
+  |-api-client.ts
+```
+
+![](./sketch/api.png)
+
+<h4 id="melit">この構成のメリット</h4>
+
+- モジュール化された設計
+- テストの容易性
+- APIクライエントの再利用
+- 例外処理の一元化
+
+<h4 id="repository">「Repository層」</h4>
 
 Repository層は、フロント側でのAPI通信のための処理を定義する層になっています。
 次に紹介するModel層とAPI-Clinetを仲介する役割持っています。具体的な責務としては、
@@ -41,7 +80,7 @@ Repository層は、フロント側でのAPI通信のための処理を定義す�
 - API-Clinetから取得したデータをModel層で定義した型に変換する実装
 - API通信に関する例外処理の実装
 
-#### 「Model層」
+<h4 id="model">「Model層」</h4>
 
 Model層は、フロント側で扱うデータ型の振る舞いを定義しAPI通信におけるデータの整合性を保つ役割を担っています。
 
@@ -51,7 +90,7 @@ Model層は、フロント側で扱うデータ型の振る舞いを定義しAPI
 - データのバリデーションの実装
 - クライアント側でのデータの加工や整形の実装
   
-#### 「API-client」
+<h4 id="api-client">「API-client」</h4>
 
 API-Clientは実際にAPI通信を行うためのコンポーネントであり、axiosを利用してAPI通信を行う。
 
@@ -60,7 +99,7 @@ API-Clientは実際にAPI通信を行うためのコンポーネントであり�
 - HTTPクライアントを使用したAPI通信の処理実装
 - 共通で利用するAPI通信に関する例外処理の実装
 
-#### 「FatoryMethod」
+<h4 id="fac-method">「Fatory層」</h4>
 
 FactoryはModel層内で利用される具体的なインスタンスを生成し、データの整合性を保つ役割を担います。
 
@@ -132,8 +171,8 @@ export class AppModule {}
   レイアウト調整及びドキュメント作成
   ....1h
 
-<!-- - 2023/09/14
+- 2023/09/14
   リファクタリング及びドキュメント調整
-  ....1h -->
-  <!-- 合計　8h -->
+  ....1h
+  - 合計　8h
 

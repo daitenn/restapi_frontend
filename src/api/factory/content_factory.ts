@@ -1,6 +1,7 @@
 import { ContentType } from "../model";
 import { ContentRepository, contentRepository } from "../repositories/content_repository"
 
+// reqにはモックデータを入れ込むこともできる。
 export const contentFactory = (req?: ContentRepository) => {
     const repository = req ?? contentRepository;
     return {

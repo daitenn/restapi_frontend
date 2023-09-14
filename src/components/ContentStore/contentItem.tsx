@@ -1,7 +1,7 @@
 import { FC, memo, useState } from 'react'
 import useStore from '../../store'
 import { useBooleanState } from '../../store'
-import { ContentType } from '../../types'
+import { ContentType } from '../../api/model'
 import { useMutateContent } from '../../hooks/useMutateContent'
 import { ReactComponent as DeleteIcon } from '../../assets/delete.svg'
 import './contentItem.css'

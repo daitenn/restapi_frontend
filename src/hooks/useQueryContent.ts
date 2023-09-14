@@ -1,13 +1,17 @@
 import axios from 'axios'
 import { useQuery } from '@tanstack/react-query'
-import { ContentType } from '../types'
+import { ContentType } from '../api/model'
+import { useState } from 'react'
+import { useAsync } from "react-use";
+import { contentFactory } from '../api/factory/content_factory';
 
 
 export const useQueryContents = () => {
+  const [contents, setContents] = useState<ContentType[]>([]);
+  
+  // factoryMethod
   const getContents = async () => {
-    const { data } = await axios.get<ContentType[]>(
-      `${process.env.REACT_APP_API_URL}/content`,
-    )
+    const data = contentFactory().index()
     return data
   }
   // cacheを効かせる

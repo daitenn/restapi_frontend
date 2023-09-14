@@ -18,7 +18,12 @@
 
 ![](./sketch/complete.png)
 - 動作要件
-  バックエンド（nest.js）側で
+  ```git clone https://github.com/daitenn/restapi_frontend.git```
+  でローカルにclone後
+  ```npm install```で```node_modules``
+  をinstallする。
+
+- バックエンド（nest.js）側で
   ```yarn start```（localhost:3000）
   をした後、フロントエンド側で
   ```npm start```(localhost:3001)

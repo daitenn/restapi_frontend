@@ -1,7 +1,7 @@
 # 目次
 - [完成品](#complete)
   - [PC１３インチの場合の対応](#pc)
-- [使用技術](#tech)
+- [使用技術及び関連ツール、ライブラリ](#tech)
   - [選定理由](#reason)
 - [課題作成の過程(設計)](#hardship)
   - [FactoryMethod化](#factory)
@@ -20,7 +20,7 @@
 - 動作要件
   ```git clone https://github.com/daitenn/restapi_frontend.git```
   でローカルにclone後
-  ```npm install```で```node_modules``
+  ```npm install```で```node_modules```
   をinstallする。
 
 - バックエンド（nest.js）側で
@@ -42,7 +42,7 @@
 
   
 
-<h2 id="tech">使用技術</h2>
+<h2 id="tech">使用技術及び関連ツール、ライブラリ</h2>
 
 - React
 - TypeScript
@@ -51,10 +51,13 @@
 - ESlint
 - zustand
 - react-query
+- axios
 
 <h3 id="reason">選定理由</h3>
 
 元々、Next.js(TypeScript)で課題作成を行おうと思っていましたが、今回の課題はSPAだったので、シンプルなReact(TypeScript)で行いました。
+また、API通信に関してはaxiosを用いており、サーバーのデータを効率的に取得・キャッシュするためにreact-queryを用いました。状態管理ライブラリは、
+zustandを個人的に学習していたので、今回の課題作成に用いました。
 
 <h2 id="hardship">課題作成の過程（設計及び中間文書）</h2>
 
